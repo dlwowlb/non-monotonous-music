@@ -128,6 +128,21 @@ sf.write("hammer.wav", output, pipe.vae.sampling_rate)
 ```
 Refer to the [documentation](https://huggingface.co/docs/diffusers/main/en/index) for more details on optimization and usage.
 
+### Fine-tuning
+
+This repository includes a minimal example for fine-tuning the model using `diffusers`.
+Install the required dependencies and run the script:
+
+```bash
+pip install torch diffusers transformers torchaudio
+python train_finetune.py
+```
+
+The script expects a `train_dataset.csv` file with columns `path` and `prompt`
+pointing to your audio files and their corresponding text descriptions. The
+pretrained weights are loaded from `model_config.json`, and the script saves the
+fine-tuned model in the `finetuned_model/` directory.
+
 
 
 
